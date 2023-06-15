@@ -7,6 +7,6 @@ const { Router } = require('express');
 const { getEvents } = require('../controller/getEvents');
 const router = Router();
 
-router.delete('/delete', getEvents );
+router.get('/', getEvents );
 
 module.exports = router;
