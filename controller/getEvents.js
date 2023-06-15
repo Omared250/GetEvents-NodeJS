@@ -11,3 +11,7 @@ const getEvents = async( req, res = response ) => {
     })
 
 };
+
+module.exports = {
+    getEvents,
+}
