@@ -1,6 +1,7 @@
 const { response } = require('express');
 const Event = require('../models/Event');
 const logger = require('../winston-config');
+const { log } = require('winston');
 
 const getEvents = async( req, res = response ) => {
 
@@ -8,6 +9,8 @@ const getEvents = async( req, res = response ) => {
 
         const events = await Event.find().populate('user', 'name');
         res.json({ events })
+
+        logger.info('Events retrived them successfully', { events })
         
     } catch (err) {
         console.log(err);
